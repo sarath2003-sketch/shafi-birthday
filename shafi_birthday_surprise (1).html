@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Birthday Surprise for Shafi</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center;
+    font-family: Georgia, "Times New Roman", serif; color: #fff8f2;
+    background: radial-gradient(circle at top, #563b70, #21172f 65%, #130f1d);
+    overflow: hidden;
+  }
+  .sparkles { position: fixed; inset: 0; pointer-events: none; opacity: .55;
+    background-image: radial-gradient(#fff 1px, transparent 1px), radial-gradient(#f4c6dc 1px, transparent 1px);
+    background-size: 46px 46px, 73px 73px; background-position: 0 0, 25px 17px; }
+  .card { position: relative; width: min(92vw, 520px); padding: 34px 25px;
+    border: 1px solid rgba(255,255,255,.24); border-radius: 26px;
+    background: rgba(255,255,255,.09); backdrop-filter: blur(12px);
+    box-shadow: 0 20px 70px rgba(0,0,0,.35); text-align: center; }
+  .moon { font-size: 2rem; color: #ffe6a8; }
+  .eyebrow { letter-spacing: .16em; text-transform: uppercase; font: 600 .72rem Arial, sans-serif; color: #e7c9ef; }
+  h1 { font-size: clamp(2.3rem, 9vw, 3.5rem); margin: 12px 0; color: #ffe5ad; }
+  .cake { font-size: 5rem; margin: 16px 0 20px; animation: bob 2.5s ease-in-out infinite; }
+  p { line-height: 1.7; font-size: 1.05rem; }
+  button { margin-top: 14px; border: 0; border-radius: 999px; padding: 13px 24px;
+    background: #ffe5ad; color: #352342; font-weight: bold; font-size: 1rem; cursor: pointer; }
+  button:hover { transform: translateY(-2px); }
+  .letter { display: none; margin-top: 22px; padding: 20px; border-radius: 18px;
+    background: rgba(18,12,28,.38); text-align: left; animation: appear .7s ease; }
+  .letter.show { display: block; }
+  .signature { text-align: right; color: #ffe5ad; font-style: italic; }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-9px) rotate(2deg); } }
+  @keyframes appear { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .footer { font: .75rem Arial, sans-serif; opacity: .65; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="sparkles"></div>
+<main class="card">
+  <div class="moon">☾</div>
+  <div class="eyebrow">A little birthday surprise</div>
+  <h1>Happy Birthday, Shafi!</h1>
+  <div class="cake" aria-label="birthday cake">🎂</div>
+  <p>Today is all about you. I hope your day is filled with smiles, peace, and beautiful moments.</p>
+  <button onclick="openLetter()">Open your surprise 💌</button>
+  <section class="letter" id="letter">
+    <p>Dear Shafi,</p>
+    <p>Happy Birthday to someone truly special. May Allah bless you with good health, happiness, peace, and success in everything you do. May He make your dreams come true and keep your heart smiling always.</p>
+    <p>I’m really glad you’re part of my life. You deserve all the beautiful things this world has to offer. Keep being your lovely self. ✨</p>
+    <p class="signature">With lots of care,<br>Your best friend 💜</p>
+  </section>
+  <div class="footer">Made with care, just for you ✨</div>
+</main>
+<script>
+function openLetter() {
+  document.getElementById('letter').classList.add('show');
+  document.querySelector('button').textContent = 'Your surprise is open 💜';
+}
+</script>
+</body>
+</html>
